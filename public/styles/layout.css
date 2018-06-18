@@ -7,6 +7,7 @@ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
+  border: red solid thin;
   box-sizing: inherit;
 }
 
@@ -18,8 +19,16 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+   width: 450px;
+   background-color: white;
+   text-align: center;
+   margin: 140px auto;
+ }
