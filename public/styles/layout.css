@@ -33,3 +33,47 @@ html {
    margin: auto;
   padding-top: 140px;
  }
+
+ article.tweet {
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin: 2em;
+}
+
+article.tweet header {
+  background-color: rgb(236, 236, 236);
+  height: 50px;
+}
+
+article header img {
+  float: left;
+  margin-left: 10px;
+}
+
+.name {
+  float: left;
+  margin-top: 0px;
+  font-size: x-large;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+.handle {
+  margin-top:  0px;
+  margin-right: 5px;
+  float: right;
+}
+
+article.tweet footer {
+  border-top: lightgray solid thin;
+  vertical-align: middle;
+}
+
+article.tweet a {
+  float: right;
+  display: none;
+}
+
+article.tweet:hover a{
+  display: block;
+}
