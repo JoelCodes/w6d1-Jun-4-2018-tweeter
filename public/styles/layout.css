@@ -7,7 +7,7 @@ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
-  border: red solid thin;
+  /* border: red solid thin; */
   box-sizing: inherit;
 }
 
@@ -15,11 +15,12 @@ html {
  * Global layout stuff
  */
 
-body {
-  margin: 0;
+ body {
+
   color: #244751;
-  background-color: #eee;
+  background-color: lightgray;
   font-family: 'Roboto', sans-serif;
+
 }
 
 /*
@@ -29,6 +30,6 @@ body {
  main {
    width: 450px;
    background-color: white;
-   text-align: center;
-   margin: 140px auto;
+   margin: auto;
+  padding-top: 140px;
  }
