@@ -2,6 +2,7 @@ article.tweet {
   border: 2px solid grey;
   border-radius: 5px;
   margin: 2em;
+  display: none;
 }
 
 article.tweet header {

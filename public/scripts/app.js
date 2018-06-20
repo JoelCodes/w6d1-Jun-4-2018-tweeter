@@ -52,6 +52,7 @@ function createTweetElement(tweetData) {
   $(`article.tweet.${tweetsDisplayed} footer`).append('<i class="fas fa-heart">');
   $(`article.tweet.${tweetsDisplayed} footer`).append('<i class="fas fa-retweet">');
   $(`article.tweet.${tweetsDisplayed} footer`).append('<i class="fas fa-flag">');
+  $('article.tweet').fadeIn(1500);
   tweetsDisplayed += 1;
 }
 
