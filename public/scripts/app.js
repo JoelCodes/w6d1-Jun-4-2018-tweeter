@@ -34,6 +34,7 @@ function loadTweets() {
   });
 }
 
+
 $(document).ready(function () {
 
   loadTweets();
@@ -41,17 +42,26 @@ $(document).ready(function () {
   $("form").on("submit", function (event) {
     event.preventDefault();
     let $tweetText = $(this).serialize();
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: $tweetText,
-      dataType: "text",
-      success: function (response) {
-        console.log(response);
-        
-        loadTweets();
+    let userEnteredText = $("form textarea").val();
+    if (userEnteredText) {
+      if (userEnteredText.length <= 140) {
+        $.ajax({
+          method: "POST",
+          url: "/tweets",
+          data: $tweetText,
+          dataType: "text",
+          success: function (response) {
+            console.log(response);
+            
+            loadTweets();
+          }
+        });
+      } else {
+        alert("Tweets are limited to 140 characters")
       }
-    });
+    } else {
+      alert("Your tweet is blank");
+    }
   });
 
 });
