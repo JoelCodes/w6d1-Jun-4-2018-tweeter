@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+let tweetsDisplayed = 0;
 
 function getDaysSince(referenceDateObject) {
   let today = new Date();
@@ -14,13 +15,27 @@ function getDaysSince(referenceDateObject) {
 function createTweetElement(tweetData) {
   let dateCreated = new Date(tweetData.created_at);
   let days = getDaysSince(dateCreated);
-  return $.parseHTML(`<article class="tweet"><header><img src="${tweetData.user.avatars.small}" alt="user avatar" width="50px" height="50px"><h2>${tweetData.user.name}</h2><h6>${tweetData.user.handle}</h6></header><p>${tweetData.content.text}</p><footer><p>${days} days ago</p><i class="fas fa-heart"></i><i class="fas fa-retweet"></i><i class="fas fa-flag"></i></footer></article>`);
+  
+  $(`.new-tweet`).after(`<article class="tweet ${tweetsDisplayed}">`);
+  $(`article.tweet.${tweetsDisplayed}`).append('<header>');
+  $(`article.tweet.${tweetsDisplayed} header`).append(`<img src="${tweetData.user.avatars.small}" alt="user avatar" width="50px" height="50px">`);
+  $(`article.tweet.${tweetsDisplayed} header`).append('<h2>')
+  $(`article.tweet.${tweetsDisplayed} header h2`).text(tweetData.user.name);
+  $(`article.tweet.${tweetsDisplayed} header`).append('<h6>')
+  $(`article.tweet.${tweetsDisplayed} header h6`).text(tweetData.user.handle);
+  $(`article.tweet.${tweetsDisplayed} header`).after('<p>')
+  $(`article.tweet.${tweetsDisplayed} p`).text(tweetData.content.text);
+  $(`article.tweet.${tweetsDisplayed} p`).after('<footer>');
+  $(`article.tweet.${tweetsDisplayed} footer`).append(`<p>${days}</p>`)
+  $(`article.tweet.${tweetsDisplayed} footer`).append('<i class="fas fa-heart">');
+  $(`article.tweet.${tweetsDisplayed} footer`).append('<i class="fas fa-retweet">');
+  $(`article.tweet.${tweetsDisplayed} footer`).append('<i class="fas fa-flag">');
+  tweetsDisplayed += 1;
 }
 
 function renderTweets(tweetData) {
   for (let i = 0; i < tweetData.length; i++) {
-    var $tweet = createTweetElement(tweetData[i]);
-    $($tweet).insertAfter('.new-tweet');
+    createTweetElement(tweetData[i]);
   }
 }
 

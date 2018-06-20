@@ -49,11 +49,11 @@ article.tweet footer i {
   color: #7ce1e1;
 }
 
-article.tweet a {
+article.tweet i {
   float: right;
   display: none;
 }
 
-article.tweet:hover a{
+article.tweet:hover i{
   display: block;
 }
