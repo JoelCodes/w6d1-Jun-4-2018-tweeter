@@ -13,6 +13,9 @@
   <!-- External Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i" rel="stylesheet" />
 
+  <!-- External Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
@@ -21,6 +24,9 @@
 
   <!-- New Tweet CSS -->
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+  <!-- Tweet CSS -->
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -43,6 +49,7 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets">
@@ -51,26 +58,6 @@
         <span class="counter">140</span>
       </form>
     </section>
-    <article class="tweet">
-      <header>
-        <img src="/images/bird.png" alt="image bird" width="50px" height="50px">
-        <p class="name">Bill fields</p>
-        <p class="handle">@handle</p>
-      </header>
-      <p>💩</p>
-      <footer>
-        💩
-        <a href="#">
-          <img src="/images/like.png" alt="flag tweet" width="20px" height="20px">
-        </a>
-        <a href="#">
-          <img src="/images/retweet.png" alt="flag tweet" width="20px" height="20px">
-        </a>
-        <a href="#">
-          <img src="/images/flag.png" alt="flag tweet" width="10px" height="10px">
-        </a>
-      </footer>
-    </article>
   </main>
   
 </body>
