@@ -31,6 +31,9 @@
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
+  <!-- MomentJS -->
+  <script type="text/javascript" src="/vendor/moment.js"></script>
+
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
 
@@ -45,14 +48,19 @@
   <nav id="nav-bar">
     <img class="logo" src="images/bird.png">
     <span class="header">Tweeter</span>
-    <i class="far fa-edit fa-3x"></i>
+    <i class="far fa-edit fa-3x" id="togglenewtweet"></i>
   </nav>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <div id="new-tweet-container">
-      
-    </div>
+      <section class="new-tweet" id="new-tweet-container">
+        <h2>Compose Tweet</h2>
+        <form>
+          <textarea id="tweetinput" name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>    
   </main>
   
 </body>

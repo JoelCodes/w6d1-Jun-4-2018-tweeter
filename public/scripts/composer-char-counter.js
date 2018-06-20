@@ -1,30 +1,13 @@
-function getCurrentCharCount(text) {
-  let stringLength = $(text).val().length;
-  return stringLength;
-}
-
-function charCountUpdate(counterToUpdate, textLengthCallBack) {
-  let currentCount = textLengthCallBack;
-  let newCount = 140 - currentCount;
-  $(counterToUpdate).text(newCount);
-}
-
-function charColorUpdate(counterToUpdate, textLengthCallBack) {
-  let currentCount = textLengthCallBack;
-  let newCount = 140 - currentCount;
-  if (newCount < 0) {
-    $(counterToUpdate).css('color', 'red');
-  } else {
-    $(counterToUpdate).css('color', 'black');
-  }
-}
-
 $(document).ready(function () {
   // keydown and keyup because keypress doesn't register highlight all text and deleting
-  $('#new-tweet-container').on('keydown keyup', function (e) {
-    charCountUpdate('.new-tweet span', getCurrentCharCount('.new-tweet textarea'));
-    charColorUpdate('.new-tweet span', getCurrentCharCount('.new-tweet textarea'));
+  $('#new-tweet-container').on('keydown keyup', function (event) {
+    let textLength = event.target.textLength;
+    let newCount = 140 - textLength;
+    $('#new-tweet-container span').text(newCount);
+    if (textLength > 140) {
+      $('#new-tweet-container span').css('color', 'red');
+    } else {
+      $('#new-tweet-container span').css('color', 'black');
+    }
   });
-
-
 });

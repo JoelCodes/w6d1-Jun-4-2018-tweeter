@@ -4,63 +4,41 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-function getDaysSince(referenceDateObject) {
-  let today = new Date();
-  let diff = new Date(today - referenceDateObject);
-  let days = diff / 1000 / 60 / 60 / 24;
-  return parseInt(days);
-}
-
-
-let newTweetVisable = false;
 
 function toggleNewTweetElement() {
-  if (!newTweetVisable) {
-    $('.new-tweet').slideDown();
-    $('textarea').focus().select();
-    newTweetVisable = true;
-  } else {
-    $('.new-tweet').slideUp();
-    newTweetVisable = false;
-  }
-}
-
-
-function createNewTweetElement() {
-  let $newTweet = $.parseHTML(`<section class="new-tweet"><h2>Compose Tweet</h2><form><textarea name="text" placeholder="What are you humming about?"></textarea><input type="submit" value="Tweet"><span class="counter">140</span></form></section>`);
-  $('#new-tweet-container').prepend($newTweet);
+  $('#new-tweet-container').slideToggle(function() {
+    $('textarea').focus();
+  })
 }
 
 
 let tweetsDisplayed = 0;
-
 function createTweetElement(tweetData) {
-  let dateCreated = new Date(tweetData.created_at);
-  let days = getDaysSince(dateCreated);
+  let days = moment(tweetData.created_at).fromNow();
 
-  $(`#new-tweet-container`).after(`<article class="tweet ${tweetsDisplayed}">`);
-  $(`article.tweet.${tweetsDisplayed}`).append('<header>');
-  $(`article.tweet.${tweetsDisplayed} header`).append(`<img src="${tweetData.user.avatars.small}" alt="user avatar" width="50px" height="50px">`);
-  $(`article.tweet.${tweetsDisplayed} header`).append('<h2>')
-  $(`article.tweet.${tweetsDisplayed} header h2`).text(tweetData.user.name);
-  $(`article.tweet.${tweetsDisplayed} header`).append('<h6>')
-  $(`article.tweet.${tweetsDisplayed} header h6`).text(tweetData.user.handle);
-  $(`article.tweet.${tweetsDisplayed} header`).after('<p>')
-  $(`article.tweet.${tweetsDisplayed} p`).text(tweetData.content.text);
-  $(`article.tweet.${tweetsDisplayed} p`).after('<footer>');
-  $(`article.tweet.${tweetsDisplayed} footer`).append(`<p>${days}</p>`)
-  $(`article.tweet.${tweetsDisplayed} footer`).append('<i class="fas fa-heart">');
-  $(`article.tweet.${tweetsDisplayed} footer`).append('<i class="fas fa-retweet">');
-  $(`article.tweet.${tweetsDisplayed} footer`).append('<i class="fas fa-flag">');
-  $('article.tweet').fadeIn(1500);
+  $(`#new-tweet-container`).after(`<article class="tweet" id="${tweetsDisplayed}">`);
+  $(`#${tweetsDisplayed}`).append('<header>');
+  $(`#${tweetsDisplayed} header`).append(`<img src="${tweetData.user.avatars.small}" alt="user avatar" width="50px" height="50px">`);
+  $(`#${tweetsDisplayed} header`).append('<h2>')
+  $(`#${tweetsDisplayed} header h2`).text(tweetData.user.name);
+  $(`#${tweetsDisplayed} header`).append('<h6>')
+  $(`#${tweetsDisplayed} header h6`).text(tweetData.user.handle);
+  $(`#${tweetsDisplayed} header`).after('<p>')
+  $(`#${tweetsDisplayed} p`).text(tweetData.content.text);
+  $(`#${tweetsDisplayed} p`).after('<footer>');
+  $(`#${tweetsDisplayed} footer`).append(`<p>${days}</p>`)
+  $(`#${tweetsDisplayed} footer`).append('<i class="fas fa-heart">');
+  $(`#${tweetsDisplayed} footer`).append('<i class="fas fa-retweet">');
+  $(`#${tweetsDisplayed} footer`).append('<i class="fas fa-flag">');
+  $(`#${tweetsDisplayed}`).fadeIn(1500);
   tweetsDisplayed += 1;
 }
 
 
 function renderTweets(tweetData) {
-  for (let i = 0; i < tweetData.length; i++) {
-    createTweetElement(tweetData[i]);
-  }
+  tweetData.map(tweet => {
+    createTweetElement(tweet);
+  });
 }
 
 
@@ -82,8 +60,8 @@ $(document).ready(function () {
   $("#new-tweet-container").on("submit", function (event) {
     event.preventDefault();
 
+    let userEnteredText = event.target[0].value;
     let $tweetText = $(".new-tweet form").serialize();
-    let userEnteredText = $("form textarea").val();
 
     if (userEnteredText) {
       if (userEnteredText.length <= 140) {
@@ -106,13 +84,7 @@ $(document).ready(function () {
     }
   });
 
-
-  $('nav i').one('click', function () {
-    createNewTweetElement();
-  });
-
-
-  $('nav i').on('click', function () {
+  $('#togglenewtweet').on('click', function () {
     toggleNewTweetElement();
   });
 
