@@ -3,7 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-let tweetsDisplayed = 0;
 
 function getDaysSince(referenceDateObject) {
   let today = new Date();
@@ -12,11 +11,34 @@ function getDaysSince(referenceDateObject) {
   return parseInt(days);
 }
 
+
+let newTweetVisable = false;
+
+function toggleNewTweetElement() {
+  if (!newTweetVisable) {
+    $('.new-tweet').slideDown();
+    $('textarea').focus().select();
+    newTweetVisable = true;
+  } else {
+    $('.new-tweet').slideUp();
+    newTweetVisable = false;
+  }
+}
+
+
+function createNewTweetElement() {
+  let $newTweet = $.parseHTML(`<section class="new-tweet"><h2>Compose Tweet</h2><form><textarea name="text" placeholder="What are you humming about?"></textarea><input type="submit" value="Tweet"><span class="counter">140</span></form></section>`);
+  $('#new-tweet-container').prepend($newTweet);
+}
+
+
+let tweetsDisplayed = 0;
+
 function createTweetElement(tweetData) {
   let dateCreated = new Date(tweetData.created_at);
   let days = getDaysSince(dateCreated);
-  
-  $(`.new-tweet`).after(`<article class="tweet ${tweetsDisplayed}">`);
+
+  $(`#new-tweet-container`).after(`<article class="tweet ${tweetsDisplayed}">`);
   $(`article.tweet.${tweetsDisplayed}`).append('<header>');
   $(`article.tweet.${tweetsDisplayed} header`).append(`<img src="${tweetData.user.avatars.small}" alt="user avatar" width="50px" height="50px">`);
   $(`article.tweet.${tweetsDisplayed} header`).append('<h2>')
@@ -33,11 +55,13 @@ function createTweetElement(tweetData) {
   tweetsDisplayed += 1;
 }
 
+
 function renderTweets(tweetData) {
   for (let i = 0; i < tweetData.length; i++) {
     createTweetElement(tweetData[i]);
   }
 }
+
 
 function loadTweets() {
   $.ajax({
@@ -54,10 +78,12 @@ $(document).ready(function () {
 
   loadTweets();
 
-  $("form").on("submit", function (event) {
+  $("#new-tweet-container").on("submit", function (event) {
     event.preventDefault();
-    let $tweetText = $(this).serialize();
+
+    let $tweetText = $(".new-tweet form").serialize();
     let userEnteredText = $("form textarea").val();
+
     if (userEnteredText) {
       if (userEnteredText.length <= 140) {
         $.ajax({
@@ -67,7 +93,7 @@ $(document).ready(function () {
           dataType: "text",
           success: function (response) {
             console.log(response);
-            
+
             loadTweets();
           }
         });
@@ -77,6 +103,16 @@ $(document).ready(function () {
     } else {
       alert("Your tweet is blank");
     }
+  });
+
+
+  $('nav i').one('click', function () {
+    createNewTweetElement();
+  });
+
+
+  $('nav i').on('click', function () {
+    toggleNewTweetElement();
   });
 
 });

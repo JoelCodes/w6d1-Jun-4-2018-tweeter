@@ -21,3 +21,12 @@
   top: 30px;
   font-size: 2em;
 }
+
+#nav-bar i {
+  float: right;
+  margin: 19px auto;
+}
+
+#nav-bar i:hover {
+  color: hsla(194, 100%, 44%, 0.89);
+}

@@ -21,7 +21,7 @@ function charColorUpdate(counterToUpdate, textLengthCallBack) {
 
 $(document).ready(function () {
   // keydown and keyup because keypress doesn't register highlight all text and deleting
-  $('.new-tweet textarea').on('keydown keyup', function (e) {
+  $('#new-tweet-container').on('keydown keyup', function (e) {
     charCountUpdate('.new-tweet span', getCurrentCharCount('.new-tweet textarea'));
     charColorUpdate('.new-tweet span', getCurrentCharCount('.new-tweet textarea'));
   });

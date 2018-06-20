@@ -3,6 +3,7 @@ section.new-tweet {
   border-radius: 5px;
   background-color: rgb(236, 236, 236);
   margin: 2em;
+  display: none;
 }
 
 section h2 {
