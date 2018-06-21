@@ -1,5 +1,5 @@
 "use strict";
-const {MongoClient} = require("mongodb");
+const { MongoClient } = require("mongodb");
 const MONGOD_URI = "mongodb://localhost:27017/tweeter";
 
 MongoClient.connect(MONGOD_URI, (err, client) => {
@@ -11,7 +11,7 @@ MongoClient.connect(MONGOD_URI, (err, client) => {
 
   // We have a connection to the "tweeter" db, starting here.
   console.log(`Connected to mongodb: ${MONGOD_URI}`);
-  
+
   // ==> Let's "get all the tweets". In Mongo-speak, we "find" them & insert to array
   function getTweets(callback) {
     db.collection("tweets").find().toArray((err, tweets) => {
@@ -21,7 +21,7 @@ MongoClient.connect(MONGOD_URI, (err, client) => {
       callback(null, tweets);
     });
   }
-  
+
   getTweets((err, tweets) => {
     if (err) {
       console.error(`Problem fetching tweets: ${err}`);
@@ -32,7 +32,8 @@ MongoClient.connect(MONGOD_URI, (err, client) => {
     tweets.map((tweet) => {
       console.log(tweet);
     })
+
+    // ==> At the end, we close the connection:
+    client.close();
   });
-  // ==> At the end, we close the connection:
-  client.close();
 });
