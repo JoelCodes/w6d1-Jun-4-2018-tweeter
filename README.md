@@ -20,3 +20,8 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Dev Dependencies
 - nodemon
+
+## Screenshots
+
+![Tweets](./screenshots/Tweets.png)
+![New Tweet](./screenshots/New_Tweet.png)
