@@ -1,0 +1,167 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  border: red solid thin;
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+body {
+  color: #244751;
+  background-color: lightgray;
+  font-family: "Roboto", sans-serif;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+main {
+  width: 450px;
+  background-color: white;
+  margin: auto;
+  padding-top: 140px;
+}
+
+#nav-bar {
+  background-color: #00a087;
+  color: #e8fdff;
+  padding: 0 2em;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  height: 80px;
+}
+
+#nav-bar .logo {
+  height: 80px;
+  width: 80px;
+  float: left;
+}
+
+#nav-bar .header {
+  margin-left: 10px;
+  position: relative;
+  top: 30px;
+  font-size: 2em;
+}
+
+#nav-bar i {
+  float: right;
+  margin: 19px auto;
+}
+
+#nav-bar i:hover {
+  color: rgba(0, 172, 224, 0.89);
+}
+
+section.new-tweet {
+  border: 2px solid grey;
+  border-radius: 5px;
+  background-color: #ececec;
+  margin: 2em;
+  display: none;
+}
+
+section h2 {
+  position: relative;
+  bottom: 12px;
+  left: 5px;
+  border-bottom: black solid thin;
+  width: 360px;
+  text-align: left;
+}
+
+form {
+  position: relative;
+  bottom: 5px;
+  left: 5px;
+}
+
+form textarea {
+  max-width: 360px;
+  min-width: 360px;
+  margin: 5px;
+  padding: 3px;
+}
+
+form input {
+  margin-left: 5px;
+}
+
+.counter {
+  left: 250px;
+  position: relative;
+}
+
+article.tweet {
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin: 2em;
+  display: none;
+}
+
+article.tweet header {
+  background-color: #ececec;
+  height: 50px;
+}
+
+article.tweet header img {
+  float: left;
+  margin-left: 10px;
+}
+
+article.tweet header h2 {
+  float: left;
+  margin-top: 4px;
+  margin-left: 20px;
+}
+
+article.tweet header h6 {
+  margin-top: 15px;
+  margin-right: 5px;
+  float: right;
+  color: lightgray;
+}
+
+article.tweet p {
+  margin: 25px 10px;
+}
+
+article.tweet footer {
+  border-top: lightgray solid thin;
+  height: 28px;
+}
+
+article.tweet footer p {
+  float: left;
+  margin: 7px 5px;
+  font-size: 10px;
+  width: 50%;
+}
+
+article.tweet footer i {
+  margin: 5px 5px;
+  float: right;
+  color: #7ce1e1;
+}
+
+article.tweet i {
+  float: right;
+  display: none;
+}
+
+article.tweet:hover i {
+  display: block;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -3,11 +3,11 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
-  /* border: red solid thin; */
+  border: red solid thin;
   box-sizing: inherit;
 }
 
@@ -32,4 +32,4 @@ html {
    background-color: white;
    margin: auto;
   padding-top: 140px;
- }
+}
