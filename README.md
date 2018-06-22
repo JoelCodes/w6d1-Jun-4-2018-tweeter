@@ -24,5 +24,5 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Screenshots
 
-![Tweets](./screenshots/Tweets.png)
-![New Tweet](./screenshots/New_Tweet.png)
+![Tweets](https://github.com/Copterdoctor/tweeter/blob/master/Screenshots/Tweets.png)
+![New Tweet](https://github.com/Copterdoctor/tweeter/blob/master/Screenshots/New_Tweet.png)
