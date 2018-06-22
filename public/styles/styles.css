@@ -138,16 +138,16 @@ article.tweet footer p {
   font-size: 10px;
   width: 50%;
 }
-article.tweet footer i {
+article.tweet i.fas {
   margin: 5px 5px;
   float: right;
   color: #7ce1e1;
-}
-article.tweet i {
-  float: right;
   display: none;
 }
-article.tweet i:hover {
+article.tweet i.fas:hover {
+  color: #5cf038;
+}
+article.tweet:hover i.fas {
   display: block;
 }
 

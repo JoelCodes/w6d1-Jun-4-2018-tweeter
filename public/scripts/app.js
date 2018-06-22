@@ -27,9 +27,9 @@ function createTweetElement(tweetData) {
   $(`#${tweetsDisplayed} p`).text(tweetData.content.text);
   $(`#${tweetsDisplayed} p`).after('<footer>');
   $(`#${tweetsDisplayed} footer`).append(`<p>${days}</p>`)
-  $(`#${tweetsDisplayed} footer`).append('<i class="fas fa-heart">');
-  $(`#${tweetsDisplayed} footer`).append('<i class="fas fa-retweet">');
-  $(`#${tweetsDisplayed} footer`).append('<i class="fas fa-flag">');
+  $(`#${tweetsDisplayed} footer`).append('<i class="fas fa-heart" id="like">');
+  $(`#${tweetsDisplayed} footer`).append('<i class="fas fa-retweet" id="retweet">');
+  $(`#${tweetsDisplayed} footer`).append('<i class="fas fa-flag" id="flag">');
   $(`#${tweetsDisplayed}`).fadeIn(1500);
   tweetsDisplayed += 1;
 }

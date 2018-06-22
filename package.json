@@ -8,7 +8,6 @@
     "start": "node server/index.js",
     "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js",
     "sass": "sass /Users/jordan/lighthouse/tweeter/sass/styles.scss:/Users/jordan/lighthouse/tweeter/public/styles/styles.css"
-
   },
   "author": "Lighthouse Labs",
   "license": "ISC",

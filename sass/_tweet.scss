@@ -43,18 +43,17 @@ article.tweet {
     width: 50%;
   }
 
-  footer i {
+  i.fas {
     margin: 5px 5px;
     float: right;
     color: #7ce1e1;
-  }
-
-  i {
-    float: right;
     display: none;
+    &:hover{
+      color: rgb(92, 240, 56);
+    }
   }
 
-  i:hover {
+  &:hover i.fas{
     display: block;
   }
 }
