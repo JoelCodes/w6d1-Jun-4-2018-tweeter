@@ -2,6 +2,8 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
+Visit demo at https://ancient-inlet-54285.herokuapp.com/
+
 
 ## Getting Started
 
