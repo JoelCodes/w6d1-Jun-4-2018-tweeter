@@ -96,8 +96,8 @@ section.new-tweet form input {
   margin-left: 5px;
 }
 section.new-tweet .counter {
-  left: 250px;
-  position: relative;
+  float: right;
+  margin-right: 6%;
 }
 
 article.tweet {
@@ -106,58 +106,48 @@ article.tweet {
   margin: 2em;
   display: none;
 }
-
 article.tweet header {
   background-color: #ececec;
   height: 50px;
 }
-
 article.tweet header img {
   float: left;
   margin-left: 10px;
 }
-
 article.tweet header h2 {
   float: left;
   margin-top: 4px;
   margin-left: 20px;
 }
-
 article.tweet header h6 {
   margin-top: 15px;
   margin-right: 5px;
   float: right;
   color: lightgray;
 }
-
 article.tweet p {
   margin: 25px 10px;
 }
-
 article.tweet footer {
   border-top: lightgray solid thin;
   height: 28px;
 }
-
 article.tweet footer p {
   float: left;
   margin: 7px 5px;
   font-size: 10px;
   width: 50%;
 }
-
 article.tweet footer i {
   margin: 5px 5px;
   float: right;
   color: #7ce1e1;
 }
-
 article.tweet i {
   float: right;
   display: none;
 }
-
-article.tweet:hover i {
+article.tweet i:hover {
   display: block;
 }
 

@@ -3,58 +3,58 @@ article.tweet {
   border-radius: 5px;
   margin: 2em;
   display: none;
-}
 
-article.tweet header {
-  background-color: rgb(236, 236, 236);
-  height: 50px;
-}
+  header {
+    background-color: rgb(236, 236, 236);
+    height: 50px;
+  }
 
-article.tweet header img {
-  float: left;
-  margin-left: 10px;
-}
+  header img {
+    float: left;
+    margin-left: 10px;
+  }
 
-article.tweet header h2 {
-  float: left;
-  margin-top: 4px;
-  margin-left: 20px;
-}
+  header h2 {
+    float: left;
+    margin-top: 4px;
+    margin-left: 20px;
+  }
 
-article.tweet header h6 {
-  margin-top:  15px;
-  margin-right: 5px;
-  float: right;
-  color: lightgray;
-}
+  header h6 {
+    margin-top:  15px;
+    margin-right: 5px;
+    float: right;
+    color: lightgray;
+  }
 
-article.tweet p {
-  margin: 25px 10px;
-}
+  p {
+    margin: 25px 10px;
+  }
 
-article.tweet footer {
-  border-top: lightgray solid thin;
-  height: 28px;
-}
+  footer {
+    border-top: lightgray solid thin;
+    height: 28px;
+  }
 
-article.tweet footer p {
-  float: left;
-  margin: 7px 5px;
-  font-size: 10px;
-  width: 50%;
-}
+  footer p {
+    float: left;
+    margin: 7px 5px;
+    font-size: 10px;
+    width: 50%;
+  }
 
-article.tweet footer i {
-  margin: 5px 5px;
-  float: right;
-  color: #7ce1e1;
-}
+  footer i {
+    margin: 5px 5px;
+    float: right;
+    color: #7ce1e1;
+  }
 
-article.tweet i {
-  float: right;
-  display: none;
-}
+  i {
+    float: right;
+    display: none;
+  }
 
-article.tweet:hover i{
-  display: block;
+  i:hover {
+    display: block;
+  }
 }
