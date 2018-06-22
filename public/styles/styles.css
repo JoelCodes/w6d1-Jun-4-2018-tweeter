@@ -8,7 +8,6 @@ html {
 }
 
 *, *:before, *:after {
-  border: red solid thin;
   box-sizing: inherit;
 }
 
@@ -25,10 +24,12 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 main {
-  width: 450px;
+  max-width: 450px;
+  min-width: 258px;
   background-color: white;
   margin: auto;
   padding-top: 140px;
+  padding-bottom: 1vh;
 }
 
 #nav-bar {
@@ -41,13 +42,16 @@ main {
   position: absolute;
   height: 80px;
 }
-
-#nav-bar .logo {
+#nav-bar section {
+  max-width: 450px;
+  min-width: 258px;
+  margin: auto;
+}
+#nav-bar img {
   height: 80px;
   width: 80px;
   float: left;
 }
-
 #nav-bar .header {
   margin-left: 10px;
   position: relative;
@@ -55,12 +59,12 @@ main {
   font-size: 2em;
 }
 
-#nav-bar i {
+#togglenewtweet {
   float: right;
   margin: 19px auto;
 }
 
-#nav-bar i:hover {
+#togglenewtweet:hover {
   color: rgba(0, 172, 224, 0.89);
 }
 
@@ -71,34 +75,27 @@ section.new-tweet {
   margin: 2em;
   display: none;
 }
-
-section h2 {
+section.new-tweet h2 {
   position: relative;
   bottom: 12px;
   left: 5px;
   border-bottom: black solid thin;
-  width: 360px;
+  max-width: 95%;
   text-align: left;
 }
-
-form {
+section.new-tweet form {
   position: relative;
   bottom: 5px;
-  left: 5px;
 }
-
-form textarea {
-  max-width: 360px;
-  min-width: 360px;
+section.new-tweet form textarea {
+  width: 95%;
   margin: 5px;
   padding: 3px;
 }
-
-form input {
+section.new-tweet form input {
   margin-left: 5px;
 }
-
-.counter {
+section.new-tweet .counter {
   left: 250px;
   position: relative;
 }

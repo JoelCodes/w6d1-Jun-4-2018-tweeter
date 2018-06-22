@@ -7,7 +7,6 @@
   box-sizing: border-box;
 }
 *, *:before, *:after {
-  border: red solid thin;
   box-sizing: inherit;
 }
 
@@ -28,8 +27,10 @@
  */
 
  main {
-   width: 450px;
-   background-color: white;
-   margin: auto;
+  max-width: 450px;
+  min-width: 258px;
+  background-color: white;
+  margin: auto;
   padding-top: 140px;
+  padding-bottom: 1vh;
 }

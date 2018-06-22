@@ -4,36 +4,34 @@ section.new-tweet {
   background-color: rgb(236, 236, 236);
   margin: 2em;
   display: none;
-}
 
-section h2 {
-  position: relative;
-  bottom: 12px;
-  left: 5px;
-  border-bottom: black solid thin;
-  width: 360px;
-  text-align: left;
-}
+  h2 {
+    position: relative;
+    bottom: 12px;
+    left: 5px;
+    border-bottom: black solid thin;
+    max-width: 95%;
+    text-align: left;
+  }
 
-form {
-  position: relative;
-  bottom: 5px;
-  left: 5px;
-}
-
-form textarea {
-  max-width: 360px;
-  min-width: 360px;
-  margin: 5px;
-  padding: 3px;
-}
-
-form input {
- margin-left: 5px;
-}
-
-.counter {
-  left: 250px;
-  position: relative;
-
+  form {
+    position: relative;
+    bottom: 5px;
+  }
+  
+  form textarea {
+    width: 95%;
+    margin: 5px;
+    padding: 3px;
+  }
+  
+  form input {
+   margin-left: 5px;
+  }
+  
+  .counter {
+    left: 250px;
+    position: relative;
+  
+  }
 }

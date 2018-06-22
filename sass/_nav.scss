@@ -7,26 +7,32 @@
   right: 0;
   position: absolute;
   height: 80px;
+
+  section {
+    max-width: 450px;
+    min-width: 258px;
+    margin: auto;
+  }
+
+  img {
+    height: 80px;
+    width: 80px;
+    float: left;
+  }
+
+  .header {
+    margin-left: 10px;
+    position: relative;
+    top: 30px;
+    font-size: 2em;
+  }
 }
 
-#nav-bar .logo {
-  height: 80px;
-  width: 80px;
-  float: left;
-}
-
-#nav-bar .header {
-  margin-left: 10px;
-  position: relative;
-  top: 30px;
-  font-size: 2em;
-}
-
-#nav-bar i {
+#togglenewtweet {
   float: right;
   margin: 19px auto;
 }
 
-#nav-bar i:hover {
+#togglenewtweet:hover {
   color: hsla(194, 100%, 44%, 0.89);
 }

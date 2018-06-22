@@ -7,19 +7,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
-const sassMiddleware = require('node-sass-middleware');
-const path = require('path');
 const app = express();
-
-app.use(sassMiddleware({
-  /* Options */
-  src: path.join(__dirname, '/styles.scss'),
-  dest: path.join(__dirname, '../public/styles.css'),
-  debug: true,
-  outputStyle: 'compressed',
-  prefix: 'styles'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
-}));
-console.log(__dirname);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
