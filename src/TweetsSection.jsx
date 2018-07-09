@@ -1,22 +1,32 @@
+/* global moment */
 import React from 'react';
 
-function Tweet() {
+function Tweet({
+  tweet: {
+    user: {
+      avatars: { small: smallAvatar }, name, handle,
+    },
+    content: { text },
+    created_at,
+  },
+}) {
   return (
     <article className="tweet" id="0" style={{ display: 'block' }}>
-      <header><img src="https://vanillicon.com/ff7423e00a99cc9865e6d722f4c636d6_50.png" alt="user avatar" width="50px" height="50px" /><h2>Jane Baglioni</h2><h6>@Baglioni3</h6></header>
-      <p>Stuff and things.</p>
+      <header><img src={smallAvatar} alt="user avatar" width="50px" height="50px" /><h2>{name}</h2><h6>{handle}</h6></header>
+      <p>{text}</p>
       <footer>
-        <p>a few seconds ago</p>
+        <p>{moment(created_at).fromNow()}</p>
         <i className="fas fa-heart" id="like" /><i className="fas fa-retweet" id="retweet" /><i className="fas fa-flag" id="flag" />
       </footer>
     </article>
   );
 }
 
-export default function TweetsSection() {
+export default function TweetsSection({ tweets }) {
+  const tweetItems = tweets.map(tweet => <Tweet key={tweet._id} tweet={tweet} />);
   return (
     <section>
-      <Tweet />
+      {tweetItems}
     </section>
   );
 }
