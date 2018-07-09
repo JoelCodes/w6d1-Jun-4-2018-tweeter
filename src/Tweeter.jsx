@@ -1,5 +1,5 @@
 import React from 'react';
-import { get } from 'axios';
+import { get, post } from 'axios';
 
 import NavBar from './NavBar.jsx';
 import NewTweetForm from './NewTweetForm.jsx';
@@ -11,6 +11,8 @@ export default class Tweeter extends React.Component {
     this.state = {
       tweets: [],
     };
+    this.addTweet = this.addTweet.bind(this);
+    this.loadTweets = this.loadTweets.bind(this);
   }
 
   componentDidMount() {
@@ -21,8 +23,13 @@ export default class Tweeter extends React.Component {
     // Do an ajax call.
     get('/tweets')
       .then(({ data }) => {
-        this.setState({ tweets: data });
+        this.setState({ tweets: data.sort((a, b) => b.created_at - a.created_at) });
       });
+  }
+
+  addTweet(text) {
+    post('/tweets', { text })
+      .then(this.loadTweets);
   }
 
   render() {
@@ -31,7 +38,7 @@ export default class Tweeter extends React.Component {
       <div>
         <NavBar />
         <main className="container">
-          <NewTweetForm />
+          <NewTweetForm addTweet={this.addTweet} />
           <TweetsSection tweets={tweets} />
         </main>
       </div>
