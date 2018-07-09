@@ -38,7 +38,7 @@ export default class Tweeter extends React.Component {
       <div>
         <NavBar />
         <main className="container">
-          <NewTweetForm addTweet={this.addTweet} />
+          <NewTweetForm addTweet={this.addTweet} sendAlert={msg => alert(msg)} />
           <TweetsSection tweets={tweets} />
         </main>
       </div>
