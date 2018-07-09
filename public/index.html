@@ -20,41 +20,15 @@
   <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
 
   <!-- External JS -->
-  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
   <!-- MomentJS -->
   <script type="text/javascript" src="/vendor/moment.js"></script>
-
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/app.js"></script>
-
-  <!-- Character Count JS -->
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
 </head>
 
 <body>
 
   <!-- Top nav bar (fixed) -->
-  <nav id="nav-bar">
-    <section>
-      <img class="tweeterlogo" src="images/bird.png">
-      <span class="header">Tweeter</span>
-      <i class="far fa-edit fa-3x" id="togglenewtweet"></i>
-    </section>
-  </nav>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-      <section class="new-tweet" id="new-tweet-container">
-        <h2>Compose Tweet</h2>
-        <form>
-          <textarea id="tweetinput" name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
-          <span class="counter">140</span>
-        </form>
-      </section>    
-  </main>
   <div id="root"></div>
   <script src="/dist/bundle.js"></script>
 </body>
